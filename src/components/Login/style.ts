@@ -108,10 +108,16 @@ export const LoginBtn = styled.input`
   position: absolute;
   top: 33.6111vh;
   left: 2.3vw;
+  &:hover {
+    cursor: pointer;
+  }
+  &:active {
+    box-shadow: 0px 2px 4px 1px rgba(46, 36, 110, 0.25);
+  }
 `;
 
 export const PWBtn = styled.img`
-width: 1.3021vw;
+  width: 1.3021vw;
   position: absolute;
   left: 19.0104vw;
   top: 26.7593vh;

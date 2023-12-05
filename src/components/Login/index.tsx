@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import * as S from './style';
 
-export function LoginCom() {
+export const  LoginCom = () => {
  const [passwordShown, setPasswordShown] = useState(false);
 
  const handlePasswordToggle = () => {

@@ -54,4 +54,11 @@ export const DelStudentBtn = styled.input`
   font-style: normal;
   font-weight: 500;
   line-height: normal;
+  border: none;
+  &:hover {
+    cursor: pointer;
+  }
+  &:active {
+    box-shadow: 0px 2px 4px 1px rgba(46, 36, 110, 0.25);
+  }
 `;
