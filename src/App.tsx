@@ -1,6 +1,6 @@
 import React from 'react';
 import Router from "./router/Router"
-import { GlobalStyle } from './styles/GlobalStyle';
+import { GlobalStyle } from './router/styles/GlobalStyle';
 
 function App() {
   return (
@@ -9,6 +9,6 @@ function App() {
     <Router/>
     </>
   );
-}
+};
 
 export default App;
