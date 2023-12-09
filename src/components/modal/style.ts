@@ -67,8 +67,8 @@ export const DelStudentBtn = styled.input`
 
 // ChangeStatus
 
-export const changeStatus = styled.div`
-  width: 146px;
+export const changeStatus = styled.div<{ width: string }>`
+  width: ${(props) => props.width};
   height: 232px;
   border-radius: 17px;
   border: 1px solid #000;
@@ -114,8 +114,8 @@ export const ChangeValue = styled.div`
   }
 `;
 
-export const ChangeLine = styled.hr`
-  width: 146px;
+export const ChangeLine = styled.hr<{ width: string }>`
+  width: ${(props) => props.width};
   border: none;
   border-top: 1px solid black;
   position: relative;
