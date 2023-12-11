@@ -1,5 +1,41 @@
 import styled from "styled-components";
 
+// Modal
+
+export const ModalBtn = styled.input`
+  width: 143px;
+  height: 44px;
+  border-radius: 20px;
+  background: #31556e;
+  color: #fff;
+  font-family: SUIT Variable;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  border: none;
+  &:hover {
+    cursor: pointer;
+  }
+  &:active {
+    box-shadow: 0px 2px 4px 1px rgba(46, 36, 110, 0.25);
+  }
+`;
+
+export const ChangeCircle = styled.div<{ top: string, left: string }>`
+  width: 11px;
+  height: 11px;
+  border: 1px solid black;
+  border-radius: 100%;
+  position: relative;
+  top: ${(props) => props.top};
+  left: ${(props) => props.left};
+  background-color: ${(props) => props.color};
+  &:hover {
+    cursor: pointer;
+  }
+`;
+
 // DelStudentModal
 
 export const DelStudent = styled.div`
@@ -43,26 +79,9 @@ export const BtnContainer = styled.div`
   height: 45px;
   display: flex;
   justify-content: space-between;
-`;
-
-export const DelStudentBtn = styled.input`
-  width: 143px;
-  height: 44px;
-  border-radius: 20px;
-  background: #31556e;
-  color: #fff;
-  font-family: SUIT Variable;
-  font-size: 20px;
-  font-style: normal;
-  font-weight: 500;
-  line-height: normal;
-  border: none;
-  &:hover {
-    cursor: pointer;
-  }
-  &:active {
-    box-shadow: 0px 2px 4px 1px rgba(46, 36, 110, 0.25);
-  }
+  position: absolute;
+  left: 40px;
+  top: 661px;
 `;
 
 // ChangeStatus
@@ -79,45 +98,151 @@ export const ChangeCon = styled.div`
   width: 110px;
   height: 25px;
   position: relative;
+  top: 5px;
   left: 20px;
-  &:not(:first-child) {
-    top: 10px;
-  }
-  &:not(:last-child) {
-    bottom: 10px;
-  }
-  &:not(:first-child, :nth-child(2)) {
-    margin-top: 10px;
-  }
-`;
-
-export const ChangeCircle = styled.div`
-  width: 11px;
-  height: 11px;
-  background-color: #5b819a;
-  border: 1px solid black;
-  border-radius: 100%;
-  position: relative;
-  top: 20px;
-  background-color: ${(props) => props.color};
-  &:hover {
-    cursor: pointer;
-  }
+  margin: 10px 0px 10px 0px;
 `;
 
 export const ChangeValue = styled.div`
+  width: 95px;
   position: relative;
   left: 15px;
-  top: 3px;
+  bottom: 10px;
   &:hover {
     cursor: pointer;
   }
 `;
 
-export const ChangeLine = styled.hr<{ width: string }>`
-  width: ${(props) => props.width};
-  border: none;
-  border-top: 1px solid black;
+// Device
+
+export const deviceHeader = styled.div`
+  width: 615px;
+  height: 54px;
+  border-radius: 20px 20px 0px 0px;
+  background: #31556e;
+`;
+
+export const deviceTitle = styled.div`
+  color: #fff;
+  font-family: SUIT Variable;
+  font-size: 30px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  position: absolute;
+  left: 20px;
+  top: 4px;
+`;
+
+export const deviceImg = styled.img<{ left: string }>`
+  position: absolute;
+  top: 10px;
+  left: ${(props) => props.left};
+`;
+
+export const deviceSTitle = styled.div`
+  color: #000;
+  text-align: center;
+  font-family: SUIT Variable;
+  font-size: 30px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
   position: relative;
-  right: 20px;
+  top: 39px;
+`;
+
+// DeviceSettings
+
+export const deviceSettings = styled.div`
+  width: 615px;
+  height: 730px;
+  border-radius: 20px;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+`;
+
+export const deviceCon = styled.div`
+  width: 408px;
+  height: 75px;
+  position: relative;
+  top: 125px;
+  left: 104px;
+`;
+
+export const deviceName = styled.div`
+  width: 141px;
+  color: #5a5a5a;
+  font-family: SUIT Variable;
+  font-size: 30px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: normal;
+`;
+
+export const deviceValue = styled.div`
+  width: 192px;
+  height: 41px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  flex-shrink: 0;
+  color: #5a5a5a;
+  font-family: SUIT Variable;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: normal;
+  text-align: center;
+  border-radius: 10px;
+  background: #e2eff7;
+  position: relative;
+  left: 216px;
+  bottom: 37.6125px;
+`;
+
+export const deviceType = styled.div`
+  width: 132px;
+  color: #5a5a5a;
+  font-family: SUIT Variable;
+  font-size: 30px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: normal;
+  position: absolute;
+`;
+
+export const deviceCnt = styled.div`
+  width: 50px;
+  color: #000;
+  font-family: SUIT Variable;
+  font-size: 30px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: normal;
+  position: absolute;
+  left: 170px;
+`;
+
+export const deviceSubm = styled.div`
+  width: 42px;
+  color: #000;
+  font-family: SUIT Variable;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: normal;
+  position: absolute;
+  left: 350px;
+  &:hover{
+    cursor: pointer;
+  }
+`;
+
+// AddDelDevice
+
+export const addDelDeivce = styled.div`
+  width: 862px;
+  height: 430px;
+  border-radius: 20px;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
 `;
