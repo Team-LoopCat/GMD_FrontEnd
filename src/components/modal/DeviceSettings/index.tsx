@@ -34,17 +34,19 @@ export const DeviceSettings = () => {
 
   return (
     <S.deviceSettings>
-      <S.deviceHeader>
+      <S.deviceHeader width={"615px"}>
         <S.deviceTitle>디바이스 세부 조회</S.deviceTitle>
         <S.deviceImg
           src="./img/DeviceSettings.svg"
           alt="세부사항 이미지"
           left="253px"
+          top="27px"
         />
         <S.deviceImg
           src="./img/ModalExport.svg"
           alt="나가기 이미지"
-          left="568px"
+          left="530px"
+          top="33px"
         />
       </S.deviceHeader>
       <S.deviceSTitle>디바이스 세부 조회</S.deviceSTitle>
@@ -57,10 +59,10 @@ export const DeviceSettings = () => {
         </S.deviceCon>
       ))}
       {devicedata.map((deviceData) =>
-        deviceInfo.map((info) => (
-          <S.deviceCon key={info.key}>
-            <S.deviceType>{info.type}</S.deviceType>
-            <S.deviceCnt>{(deviceData as any)[info.key]}개</S.deviceCnt>
+        deviceInfo.map((value) => (
+          <S.deviceCon key={value.key}>
+            <S.deviceType>{value.type}</S.deviceType>
+            <S.deviceCnt>{(deviceData as any)[value.key]}개</S.deviceCnt>
             <S.deviceSubm>제출</S.deviceSubm>
             <S.ChangeCircle
               color={"#709FBF"}
@@ -70,9 +72,9 @@ export const DeviceSettings = () => {
           </S.deviceCon>
         ))
       )}
-      <S.BtnContainer>
-        <S.ModalBtn type="submit" value={"디바이스 변경"}/>
-        <S.ModalBtn type="submit" value={"확인"}/>
+      <S.BtnContainer top={"103px"} left={'42px'}>
+        <S.ModalBtn type="submit" value={"디바이스 변경"} />
+        <S.ModalBtn type="submit" value={"확인"} />
       </S.BtnContainer>
     </S.deviceSettings>
   );

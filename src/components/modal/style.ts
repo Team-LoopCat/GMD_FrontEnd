@@ -22,7 +22,7 @@ export const ModalBtn = styled.input`
   }
 `;
 
-export const ChangeCircle = styled.div<{ top: string, left: string }>`
+export const ChangeCircle = styled.div<{ top: string; left: string }>`
   width: 11px;
   height: 11px;
   border: 1px solid black;
@@ -74,14 +74,14 @@ export const WarningMessage = styled.div`
   line-height: normal;
 `;
 
-export const BtnContainer = styled.div`
+export const BtnContainer = styled.div<{ top: string; left: string }>`
   width: 528px;
   height: 45px;
   display: flex;
   justify-content: space-between;
-  position: absolute;
-  left: 40px;
-  top: 661px;
+  position: relative;
+  left: ${(props) => props.left};
+  top: ${(props) => props.top};
 `;
 
 // ChangeStatus
@@ -115,8 +115,8 @@ export const ChangeValue = styled.div`
 
 // Device
 
-export const deviceHeader = styled.div`
-  width: 615px;
+export const deviceHeader = styled.div<{ width: string }>`
+  width: ${(props) => props.width};
   height: 54px;
   border-radius: 20px 20px 0px 0px;
   background: #31556e;
@@ -129,14 +129,14 @@ export const deviceTitle = styled.div`
   font-style: normal;
   font-weight: 700;
   line-height: normal;
-  position: absolute;
+  position: relative;
   left: 20px;
   top: 4px;
 `;
 
-export const deviceImg = styled.img<{ left: string }>`
-  position: absolute;
-  top: 10px;
+export const deviceImg = styled.img<{ left: string; top: string }>`
+  position: relative;
+  bottom: ${(props) => props.top};
   left: ${(props) => props.left};
 `;
 
@@ -159,13 +159,17 @@ export const deviceSettings = styled.div`
   height: 730px;
   border-radius: 20px;
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  position: relative;
+  left: 652.5px;
+  top: 175px;
 `;
 
 export const deviceCon = styled.div`
   width: 408px;
-  height: 75px;
+  height: 41px;
+  padding: 17px 0px 17px 0px;
   position: relative;
-  top: 125px;
+  top: 91px;
   left: 104px;
 `;
 
@@ -233,7 +237,7 @@ export const deviceSubm = styled.div`
   line-height: normal;
   position: absolute;
   left: 350px;
-  &:hover{
+  &:hover {
     cursor: pointer;
   }
 `;
@@ -245,4 +249,60 @@ export const addDelDeivce = styled.div`
   height: 430px;
   border-radius: 20px;
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+`;
+
+export const AddsubCon = styled.div<{ width: string; height: string }>`
+  width: ${(props) => props.width};
+  height: ${(props) => props.height};
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  position: relative;
+  left: 5px;
+`;
+
+export const AddsubTitle = styled.div`
+  width: 132px;
+  text-align: center;
+  color: #5a5a5a;
+  font-family: SUIT Variable;
+  font-size: 30px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: normal;
+`;
+export const AddsubImg = styled.img`
+  width: 18px;
+  height: 18px;
+  &:hover {
+    cursor: pointer;
+  }
+`;
+
+export const AddsubValue = styled.div`
+  color: #000;
+  font-family: SUIT Variable;
+  font-size: 13.846px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+`;
+
+export const AddSCon = styled.label<{
+  width: string;
+  height: string;
+  left: string;
+  top: string;
+}>`
+  width: ${(props) => props.width};
+  height: ${(props) => props.height};
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  top: 100px;
+  display: flex;
+  column-gap: 25px;
+  position: relative;
+  left: ${(props) => props.left};
+  top: ${(props) => props.top};
 `;
