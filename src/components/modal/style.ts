@@ -41,7 +41,6 @@ export const ChangeCircle = styled.div<{ top: string; left: string }>`
 export const DelStudent = styled.div`
   width: 862px;
   height: 430px;
-  background-color: yellow;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -49,9 +48,9 @@ export const DelStudent = styled.div`
   border-radius: 20px;
   background: #fff;
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
-  position: fixed;
-  top: 325px;
-  left: 529px;
+  position: relative;
+  top: 30.0926vh;
+  left: 27.5521vw;
 `;
 
 export const DelStudentImgDiv = styled.div`
