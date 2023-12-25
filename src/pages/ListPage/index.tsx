@@ -17,34 +17,26 @@ const Dashboard: React.FC = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const localStorageData = localStorage.getItem('studentsData');
+        // API에서 학생 데이터 가져오기
+        // const response = await fetch('YOUR_API_ENDPOINT_HERE');
+        // const data = await response.json();
+        // setStudentsData(data);
 
-        if (localStorageData) {
-          setStudentsData(JSON.parse(localStorageData));
-        } else {
-          // For testing purposes, use placeholder data
-          const placeholderData = [
-            { studentId: '1101', name: '오송주', lockerNumber: '111', submitted: true },
-            { studentId: '1102', name: '김강민', lockerNumber: '110', submitted: false },
-            { studentId: '1103', name: '홍서은', lockerNumber: '109', submitted: true },
-            { studentId: '1104', name: '이태윤', lockerNumber: '108', submitted: false },
-            { studentId: '1105', name: '권민휘', lockerNumber: '107', submitted: true },
-          ];
-
-          setStudentsData(placeholderData);
-        }
+        // 테스트용 플레이스홀더 데이터
+        setStudentsData([
+          { studentId: '1101', name: '오송주', lockerNumber: '111', submitted: true },
+          { studentId: '1102', name: '김강민', lockerNumber: '110', submitted: false },
+          { studentId: '1103', name: '홍서은', lockerNumber: '109', submitted: true },
+          { studentId: '1104', name: '이태윤', lockerNumber: '108', submitted: false },
+          { studentId: '1105', name: '권민휘', lockerNumber: '107', submitted: true },
+        ]);
       } catch (error) {
-        console.error('Error fetching data:', error);
+        console.error('데이터 가져오기 오류:', error);
       }
     };
 
     fetchData();
-  }, []);
-
-  useEffect(() => {
-    // Save the state to local storage whenever it changes
-    localStorage.setItem('studentsData', JSON.stringify(studentsData));
-  }, [studentsData]);
+  }, []); // 빈 의존성 배열은 useEffect가 componentDidMount처럼 한 번만 실행되도록 함
 
   const getStatusColor = (student: Student) => {
     if (student.submitted) {
