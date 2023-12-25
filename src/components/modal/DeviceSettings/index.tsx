@@ -16,13 +16,14 @@ export const DeviceSettings = () => {
     },
   ];
 
+  const storedDeviceData = JSON.parse(
+    localStorage.getItem("deviceCounts") || "{}"
+  );
+
   const devicedata = [
     {
       stuID: 1109,
-      phone: 1,
-      personalLabtob: 1,
-      schoolLaptop: 1,
-      tablet: 0,
+      ...storedDeviceData,
     },
   ];
 

@@ -9,8 +9,6 @@ export const DelStudentModal = () => {
     navigate("/ListPage");
   };
 
-  const handleDelelte
-
   return (
     <S.DelStudent>
       <S.DelStudentImgDiv>
@@ -19,8 +17,9 @@ export const DelStudentModal = () => {
       <S.WarningMessage>정말 삭제하시겠습니까?</S.WarningMessage>
       <S.BtnContainer top={"0px"} left={"10px"}>
         <S.ModalBtn type="submit" value={"취소"} onClick={handleNavigate} />
-        <S.ModalBtn type="submit" value={"확인"} onClick={handleDelelte} />
+        <S.ModalBtn type="submit" value={"확인"} onClick={handleNavigate  } />
       </S.BtnContainer>
     </S.DelStudent>
   );
 };
+

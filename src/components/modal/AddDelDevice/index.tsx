@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import * as S from "../style";
+import { useNavigate } from "react-router-dom";
 
 export const AddDelDevice = () => {
   const AddDevice = ["핸드폰", "학교노트북", "개인노트북", "태블릿"];
@@ -20,7 +21,22 @@ export const AddDelDevice = () => {
       setCount({ ...count, [value]: count[value] - 1 });
     }
   };
-  
+
+  const navigate = useNavigate();
+
+  const handleSaveChanges = () => {
+    const dataToSave = {
+      phone: count["핸드폰"],
+      personalLabtob: count["개인노트북"],
+      schoolLaptop: count["학교노트북"],
+      tablet: count["태블릿"],
+    };
+
+    localStorage.setItem("deviceCounts", JSON.stringify(dataToSave));
+
+    navigate("/DeviceSettings");
+  };
+
   return (
     <S.addDelDeivce>
       <S.deviceHeader width={"862px"}>
@@ -60,7 +76,11 @@ export const AddDelDevice = () => {
         ))}
       </S.AddSCon>
       <S.AddSCon width={"143px"} height={"44px"} left={"690px"} top={"180px"}>
-        <S.ModalBtn type="submit" value={"변경사항 저장"} />
+        <S.ModalBtn
+          type="submit"
+          value={"변경사항 저장"}
+          onClick={handleSaveChanges}
+        />
       </S.AddSCon>
     </S.addDelDeivce>
   );

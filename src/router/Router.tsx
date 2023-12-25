@@ -1,10 +1,8 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import LoginPage from "../components/Login/index";
 import Navbar from "../components/common/navBar";
 import Button from "../components/common/button"
 import ListPage from "../pages/ListPage"
 import CheckPage from "../pages/PhoneCheckerAddPage"
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
 // import Navbar from "../components/common/navBar";
 // import Button from "../components/common/button"
 import { LoginPage } from "../components/pages/LoginPage/index";
