@@ -17,26 +17,34 @@ const Dashboard: React.FC = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        // API에서 학생 데이터 가져오기
-        // const response = await fetch('YOUR_API_ENDPOINT_HERE');
-        // const data = await response.json();
-        // setStudentsData(data);
+        const localStorageData = localStorage.getItem('studentsData');
 
-        // 테스트용 플레이스홀더 데이터
-        setStudentsData([
-          { studentId: '1101', name: '오송주', lockerNumber: '111', submitted: true },
-          { studentId: '1102', name: '김강민', lockerNumber: '110', submitted: false },
-          { studentId: '1103', name: '홍서은', lockerNumber: '109', submitted: true },
-          { studentId: '1104', name: '이태윤', lockerNumber: '108', submitted: false },
-          { studentId: '1105', name: '권민휘', lockerNumber: '107', submitted: true },
-        ]);
+        if (localStorageData) {
+          setStudentsData(JSON.parse(localStorageData));
+        } else {
+          // For testing purposes, use placeholder data
+          const placeholderData = [
+            { studentId: '1101', name: '오송주', lockerNumber: '111', submitted: true },
+            { studentId: '1102', name: '김강민', lockerNumber: '110', submitted: false },
+            { studentId: '1103', name: '홍서은', lockerNumber: '109', submitted: true },
+            { studentId: '1104', name: '이태윤', lockerNumber: '108', submitted: false },
+            { studentId: '1105', name: '권민휘', lockerNumber: '107', submitted: true },
+          ];
+
+          setStudentsData(placeholderData);
+        }
       } catch (error) {
-        console.error('데이터 가져오기 오류:', error);
+        console.error('Error fetching data:', error);
       }
     };
 
     fetchData();
-  }, []); // 빈 의존성 배열은 useEffect가 componentDidMount처럼 한 번만 실행되도록 함
+  }, []);
+
+  useEffect(() => {
+    // Save the state to local storage whenever it changes
+    localStorage.setItem('studentsData', JSON.stringify(studentsData));
+  }, [studentsData]);
 
   const getStatusColor = (student: Student) => {
     if (student.submitted) {
@@ -73,20 +81,20 @@ const Dashboard: React.FC = () => {
       <Styled.DashboardContainer>
         <Styled.TotalStudentsContainer>
           <Styled.FontLabel>전체 인원수</Styled.FontLabel>
-          <Styled.NumberLabel>{5}</Styled.NumberLabel>
+          <Styled.NumberLabel>{filteredStudents.length}</Styled.NumberLabel>
         </Styled.TotalStudentsContainer>
 
         <Styled.TotalStudentsContainer>
           <Styled.FontLabel>제출 인원수</Styled.FontLabel>
           <Styled.NumberLabel>
-            {3}
+            {filteredStudents.filter((student) => student.submitted).length}
           </Styled.NumberLabel>
         </Styled.TotalStudentsContainer>
 
         <Styled.TotalStudentsContainer>
           <Styled.FontLabel>미제출 인원수</Styled.FontLabel>
           <Styled.NumberLabel>
-            {2}
+            {filteredStudents.filter((student) => !student.submitted).length}
           </Styled.NumberLabel>
         </Styled.TotalStudentsContainer>
 
