@@ -4,7 +4,7 @@ export const NavContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 6vw;
+  width: 4.5vw;
   background-color: #31556E;
   color: #FFFFFF;
   padding: 2vw;
@@ -12,11 +12,12 @@ export const NavContainer = styled.div`
   left: 0;
   top: 0;
   bottom: 0;
+  margin-right: 10px;
 `;
 
 export const LogoContainer = styled.div`
   margin-top: 2vh;
-  margin-bottom: 0;
+  margin-bottom: 8vh;
 `;
 
 export const NavIcon = styled.div`
@@ -27,20 +28,21 @@ export const NavIcon = styled.div`
 
 export const HighlightBox = styled.div`
   position: absolute;
-  top: -1.7vh;
+  top: -2.5vh;
   left: -4vw;
   bottom: -0.5vh;
-  width: 1.1vw;
-  height: 8vh;
+  width: 1.3vw;
+  height: 8.5vh;
   background-color: #24B663;
-  border-radius: 0 1vw 1vw 0;
+  border-radius: 12px;
 `;
 
 export const IconWrapper = styled.div`
   display: flex;
+  margin-bottom: 5vh;
 `;
 
 export const LogoutWrapper = styled.div`
-  margin-top: 10vh;
+  margin-top: 30vh;
   cursor: pointer;
 `;
