@@ -1,12 +1,25 @@
 import React, { useState, useEffect } from 'react';
+import { Link, Navigate } from 'react-router-dom'; 
 import * as Styled from './style'; // 스타일드 컴포넌트에 따른 import
 import Nav from '../../components/common/navBar';
+import { DelStudentModal } from '../../components/modal/DelStudentModal/index'
+import { DeviceSettings } from '../../components/modal/DeviceSettings/index'
+import { useNavigate } from 'react-router-dom';
+const navigate = useNavigate();
 
 interface Student {
   studentId: string;
   name: string;
   lockerNumber: string;
   submitted: boolean;
+}
+
+const handleDeviceSettings = () => {
+    navigate('/DeviceSettings')
+}
+
+const handleDelStudentModal = () => {
+    navigate('/DelStudentModal')
 }
 
 const Dashboard: React.FC = () => {
@@ -145,8 +158,8 @@ const Dashboard: React.FC = () => {
                     : '미제출'}
                   <Styled.RightStatusDot submitted={student.submitted} />
                 </Styled.RightItemLabel>
-                <Styled.RightItemLabel>디바이스 조회</Styled.RightItemLabel>
-                <Styled.RightItemLabel>학생 조회</Styled.RightItemLabel>
+                <Styled.RightItemLabel onClick={handleDeviceSettings}>디바이스 조회</Styled.RightItemLabel>
+                <Styled.RightItemLabel onClick={handleDelStudentModal}>학생 조회</Styled.RightItemLabel>
               </Styled.RightItem>
             ))}
           </Styled.RightContainer>
