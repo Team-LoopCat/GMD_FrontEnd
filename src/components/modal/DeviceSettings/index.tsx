@@ -1,4 +1,5 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import * as S from "../style";
 
 export const DeviceSettings = () => {
@@ -31,6 +32,16 @@ export const DeviceSettings = () => {
     { type: "개인노트북", key: "personalLabtob" },
     { type: "태블릿", key: "tablet" },
   ];
+
+  const navigate = useNavigate();
+
+  const handleDeviceChange = () => {
+    navigate("/AddDelDevice");
+  };
+
+  const handleDeviceConfirm = () => {
+    navigate("/ListPage");
+  };
 
   return (
     <S.deviceSettings>
@@ -72,9 +83,17 @@ export const DeviceSettings = () => {
           </S.deviceCon>
         ))
       )}
-      <S.BtnContainer top={"103px"} left={'42px'}>
-        <S.ModalBtn type="submit" value={"디바이스 변경"} />
-        <S.ModalBtn type="submit" value={"확인"} />
+      <S.BtnContainer top={"103px"} left={"42px"}>
+        <S.ModalBtn
+          type="submit"
+          value={"디바이스 변경"}
+          onClick={handleDeviceChange}
+        />
+        <S.ModalBtn
+          type="submit"
+          value={"확인"}
+          onClick={handleDeviceConfirm}
+        />
       </S.BtnContainer>
     </S.deviceSettings>
   );

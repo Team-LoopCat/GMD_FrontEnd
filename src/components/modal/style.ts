@@ -248,6 +248,9 @@ export const addDelDeivce = styled.div`
   height: 430px;
   border-radius: 20px;
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  position: relative;
+  top: 300px;
+  left: 500px;
 `;
 
 export const AddsubCon = styled.div<{ width: string; height: string }>`
