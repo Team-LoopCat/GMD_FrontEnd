@@ -25,3 +25,5 @@ export const  LoginCom = () => {
    </S.Container>
  );
 }
+
+export default LoginCom;

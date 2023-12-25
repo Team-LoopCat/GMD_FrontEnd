@@ -22,27 +22,30 @@ const Navbar: React.FC = () => {
       <S.LogoContainer>
         <LogoIcon />
       </S.LogoContainer>
-      <S.NavIcon onClick={() => handleIconClick('graph')}>
-        {activeIcon === 'graph' && <S.HighlightBox />}
-        <S.IconWrapper>
-          {activeIcon === 'graph' ? <CGraphIcon /> : <GraphIcon />}
-          {activeIcon === 'graph'}
-        </S.IconWrapper>
-      </S.NavIcon>
-      <S.NavIcon onClick={() => handleIconClick('list')}>
-        {activeIcon === 'list' && <S.HighlightBox />}
-        <S.IconWrapper>
-          {activeIcon === 'list' ? <CListIcon /> : <ListIcon />}
-          {activeIcon === 'list'}
-        </S.IconWrapper>
-      </S.NavIcon>
-      <S.NavIcon onClick={() => handleIconClick('addition')}>
-        {activeIcon === 'addition' && <S.HighlightBox />}
-        <S.IconWrapper>
-          {activeIcon === 'addition' ? <CAdditionIcon /> : <AdditionIcon />}
-          {activeIcon === 'addition'}
-        </S.IconWrapper>
-      </S.NavIcon>
+      <div>
+        <S.NavIcon onClick={() => handleIconClick('graph')}>
+          {activeIcon === 'graph' && <S.HighlightBox />}
+          <S.IconWrapper>
+            {activeIcon === 'graph' ? <CGraphIcon /> : <GraphIcon />}
+            {activeIcon === 'graph'}
+          </S.IconWrapper>
+        </S.NavIcon>
+        <S.NavIcon onClick={() => handleIconClick('list')}>
+          {activeIcon === 'list' && <S.HighlightBox />}
+          <S.IconWrapper>
+            {activeIcon === 'list' ? <CListIcon /> : <ListIcon />}
+            {activeIcon === 'list'}
+          </S.IconWrapper>
+        </S.NavIcon>
+        <S.NavIcon onClick={() => handleIconClick('addition')}>
+          {activeIcon === 'addition' && <S.HighlightBox />}
+          <S.IconWrapper>
+            {activeIcon === 'addition' ? <CAdditionIcon /> : <AdditionIcon />}
+            {activeIcon === 'addition'}
+          </S.IconWrapper>
+        </S.NavIcon>
+      </div>
+      
       <S.LogoutWrapper>
         <Logout />
       </S.LogoutWrapper>
